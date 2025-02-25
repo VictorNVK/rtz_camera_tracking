@@ -5,12 +5,11 @@ import queue
 RTSP_URL = 'rtsp://username:password@192.168.100.152:554/live/av0'
 
 onvif_ip = '192.168.100.152'
-onvif_port = 2000  # Replace with your camera's ONVIF port
+onvif_port = 2000
 onvif_user = 'admin'
 onvif_pass = 'admin'
 
-frame_skip = 10
-
+frame_skip = 2
 
 # Каллибровочные данные
 fov_horizontal = 65  # Горизонтальный угол обзора камеры
@@ -22,7 +21,7 @@ min_tilt_threshold = 60
 
 
 # Скорость движения камеры (от -1.0 до 1.0)
-pan_speed = 0.40  # скорость движения по горизонтали
+pan_speed = 0.50  # скорость движения по горизонтали
 tilt_speed = 0.15  # скорость движения по вертикали
 
 center_threshold_x = 70  # Погрешность по горизонтали
@@ -31,4 +30,4 @@ center_threshold_y = 70  # Погрешность по вертикали
 frame_count = 0
 
 # Очередь для хранения кадров
-frame_queue = queue.Queue(maxsize=10)
+frame_queue = queue.Queue(maxsize=5)

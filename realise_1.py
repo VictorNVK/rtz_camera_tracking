@@ -27,9 +27,8 @@ status = ptz_service.GetStatus({'ProfileToken': profile_token})
 pan, tilt, zoom = 0.0, 0.0, 0.0
 
 if not capture.isOpened():
-    print("Ошибка открытия RTSP потока.")
+    print("Ошибка открытия RTSP потока")
     exit()
-
 
 cv2.namedWindow('Stream с детекцией', cv2.WINDOW_NORMAL)
 
@@ -38,6 +37,7 @@ frame_height = int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # Центр фрейма
 center_x, center_y = frame_width // 2, frame_height // 2
+
 
 # Функция с отправкой запроса камере
 def move_camera(ptz_service, profile_token, pan_speed, tilt_speed):
@@ -53,6 +53,7 @@ def move_camera(ptz_service, profile_token, pan_speed, tilt_speed):
         }
     }
     ptz_service.ContinuousMove(request)
+
 
 # Функция для обработки кадров с использованием YOLO на GPU
 def process_frame(frame):
